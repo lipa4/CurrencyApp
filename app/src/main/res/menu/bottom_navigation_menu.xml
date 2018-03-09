@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_rates"
+        android:enabled="true"
+        android:icon="@drawable/ic_list_black_24dp"
+        android:title="@string/bottom_bar_exchange_rates"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_calculator"
+        android:enabled="true"
+        android:icon="@drawable/ic_compare_arrows_black_24dp"
+        android:title="@string/bottom_bar_calculator"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_timeline"
+        android:enabled="true"
+        android:icon="@drawable/ic_timeline_black_24dp"
+        android:title="@string/bottom_bar_timeline"
+        app:showAsAction="ifRoom" />
+</menu>
