@@ -1,17 +1,13 @@
-package com.example.tomislav.currencyconverter
+package com.example.tomislav.currencyconverter.view.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.view.ContextThemeWrapper
-import android.view.View
+
 import android.view.WindowManager
-import android.view.animation.AnimationUtils
-import android.widget.TextView
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.tomislav.currencyconverter.R
+import dagger.android.support.DaggerAppCompatActivity
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setStatusBarTranslucent(true)
     }
 
-    protected fun setStatusBarTranslucent(makeTranslucent: Boolean) {
+    fun setStatusBarTranslucent(makeTranslucent: Boolean) {
         if (makeTranslucent) {
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         } else {
