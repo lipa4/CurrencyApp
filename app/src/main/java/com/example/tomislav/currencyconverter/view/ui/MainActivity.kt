@@ -20,6 +20,7 @@ class MainActivity : DaggerAppCompatActivity(), BottomNavigation.OnMenuItemSelec
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setStatusBarTranslucent(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         initializeBottomNavigation()
         initializeUI()
     }
