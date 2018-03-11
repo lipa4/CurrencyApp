@@ -15,7 +15,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey( CurrencyViewModel::class )
-    abstract fun bindHeroesViewModel( mainViewModel: CurrencyViewModel ): ViewModel
+    abstract fun bindCurrencyViewModel( currencyViewModel: CurrencyViewModel ): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory( currencyFactory: CurrencyViewModelFactory): ViewModelProvider.Factory

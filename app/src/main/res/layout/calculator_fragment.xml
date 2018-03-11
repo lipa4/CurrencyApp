@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="view.ui.MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/editText_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/diagonalView"
+        app:layout_constraintEnd_toEndOf="@+id/diagonalView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/diagonalView"
+        app:layout_constraintVertical_bias="0.412">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:ems="10"
+            android:hint="@string/calculator_edittext"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="5dp"
+        android:background="@drawable/my_button_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/diagonalView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton">
+        <Button
+            android:id="@+id/to_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/my_button_bg"
+            android:drawableStart="@drawable/flag_hrk"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:text="HRK"
+            android:clickable="true"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="5dp"
+        android:background="@drawable/my_button_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/diagonalView"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_card"
+        app:layout_constraintVertical_bias="0.285">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/from_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/my_button_bg"
+            android:drawableStart="@drawable/flag_bam"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:text="BAM"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            />
+    </android.support.v7.widget.CardView>
+
+    <developer.shivam.library.DiagonalView
+        android:id="@+id/diagonalView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:elevation="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        diagonal:angle="20"
+        diagonal:diagonalGravity="right|bottom" />
+
+    <TextSwitcher
+        android:id="@+id/calculator_text_switcher"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/my_button_bg"
+        android:padding="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/BottomNavigation"
+        app:layout_constraintEnd_toEndOf="@+id/editText_card"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText_card"
+        app:layout_constraintTop_toBottomOf="@+id/diagonalView" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="52dp"
+        android:clickable="true"
+        android:src="@drawable/ic_import_export_black_24dp"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/diagonalView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+

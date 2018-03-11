@@ -2,7 +2,7 @@
     <string name="app_name">Currencies</string>
     <string name="bottom_bar_calculator">Calculator</string>
     <string name="bottom_bar_exchange_rates">Rates</string>
-    <string name="bottom_bar_timeline">Timeline</string>
+    <string name="bottom_bar_timeline">Chart</string>
     <string name="calculator_edittext">Enter amount to convert</string>
     <string name="list_item_buy_rate_title">BUY</string>
     <string name="list_item_median_rate_title">MEDIAN</string>
