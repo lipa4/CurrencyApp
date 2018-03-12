@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_card"
         app:layout_constraintVertical_bias="0.285">
-        <android.support.v7.widget.AppCompatButton
+        <Button
             android:id="@+id/from_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,14 +98,17 @@
         diagonal:angle="20"
         diagonal:diagonalGravity="right|bottom" />
 
-    <TextSwitcher
+    <TextView
         android:id="@+id/calculator_text_switcher"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:background="@drawable/my_button_bg"
-        android:padding="30dp"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/BottomNavigation"
         app:layout_constraintEnd_toEndOf="@+id/editText_card"
         app:layout_constraintHorizontal_bias="0.0"

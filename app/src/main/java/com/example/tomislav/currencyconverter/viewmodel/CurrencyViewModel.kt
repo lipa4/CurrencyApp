@@ -18,5 +18,10 @@ class CurrencyViewModel @Inject constructor(val repository: CurrenciesRepository
 
     fun isNetworkAvailable(context: Context): Observable<Boolean> = repository.isNetworkAvailable(context)
 
+    fun convertCurrencies(from:Currency, to:Currency, amount:Double) = repository.convertCurrencies(from,to,amount)
+
+    fun getFilteredCurrencyListFrom(excludeCode:String = "EUR")= repository.getFilteredCurrencyList(excludeCode)
+
+    fun getFilteredCurrencyListTo(excludeCode:String = "HRK")= repository.getFilteredCurrencyList(excludeCode)
 
 }

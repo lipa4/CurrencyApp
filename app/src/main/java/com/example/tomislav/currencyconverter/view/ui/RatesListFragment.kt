@@ -77,7 +77,7 @@ class RatesListFragment():DaggerFragment(){
         )
 
     }
-
+    //TODO implement this feature
     private fun waitForConnection(): Disposable {
 
         waitForNetwork = ReactiveNetwork.observeInternetConnectivity()
