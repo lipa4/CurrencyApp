@@ -1,6 +1,7 @@
 package com.example.tomislav.currencyconverter.di
 
 import android.content.Context
+import com.example.tomislav.currencyconverter.data.repository.CurrenciesRepository
 import com.example.tomislav.currencyconverter.data.repository.HNBService
 import com.example.tomislav.currencyconverter.utils.rx.AppRxSchedulers
 import com.example.tomislav.currencyconverter.utils.rx.RxSchedulers
@@ -36,23 +37,24 @@ class NetworkModule{
 
     @Singleton
     @Provides
-    fun provideHttpClient(cache: Cache): OkHttpClient {
-        val builder = OkHttpClient().newBuilder().cache(cache)
+    fun provideHttpClient(): OkHttpClient {
+        val builder = OkHttpClient().newBuilder()
         return builder.build()
     }
 
 
-    @Singleton
+  /*  @Singleton
     @Provides
     fun provideCache(file: File): Cache = Cache(file,10*10*1000)
 
     @Singleton
     @Provides
-    fun provideCacheFile(context: Context): File = context.filesDir
+    fun provideCacheFile(context: Context): File = context.filesDir*/
 
     @Provides
     fun provideMoshiClient(): MoshiConverterFactory = MoshiConverterFactory.create()
 
     @Provides
     fun provideRxSchedulers(): RxSchedulers = AppRxSchedulers()
+
 }

@@ -9,23 +9,21 @@ import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import com.example.tomislav.currencyconverter.utils.NetworkUtils
+import javax.inject.Singleton
 
 
+@Singleton
+class CurrenciesRepository(private val hnbService: HNBService){
 
-class CurrenciesRepository{
+    private var list:Array<ExtendedCurrency>
 
-    private val list:Array<ExtendedCurrency>
-    @Inject
-    lateinit var hnbService:HNBService
-    @Inject
-    lateinit var context: Context
     lateinit var exchangeRates:Observable<List<Currency>>
 
     init {
         val tempList: ArrayList<ExtendedCurrency> = ArrayList()
         tempList.addAll(ExtendedCurrency.CURRENCIES)
         tempList.add(createBAMCurrency())
-        this.list=tempList as Array<ExtendedCurrency>
+        this.list=tempList.toTypedArray()
     }
 
     private fun createBAMCurrency():ExtendedCurrency{
@@ -42,7 +40,7 @@ class CurrenciesRepository{
         return exchangeRates
     }
 
-    fun isNetworkAvailable(): Observable<Boolean> {
+    fun isNetworkAvailable(context: Context): Observable<Boolean> {
         return NetworkUtils.isNetworkAvailableObservable(context)
     }
 

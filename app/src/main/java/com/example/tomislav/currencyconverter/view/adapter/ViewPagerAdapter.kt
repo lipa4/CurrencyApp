@@ -15,14 +15,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     val fragments = ArrayList<Fragment>()
 
-    /*@Inject
-    lateinit var ratesListFragment: RatesListFragment
-    @Inject
-    lateinit var calculatorFragment: CalculatorFragment
-     @Inject
-    lateinit var chartFragment: ChartFragment
-*/
-    //TODO implement injection
+
     init {
         fragments.clear()
         fragments.add(RatesListFragment())

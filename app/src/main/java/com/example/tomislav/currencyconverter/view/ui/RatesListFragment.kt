@@ -1,6 +1,7 @@
 package com.example.tomislav.currencyconverter.view.ui
 
 import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -36,7 +37,7 @@ class RatesListFragment():DaggerFragment(){
     lateinit var viewModel: CurrencyViewModel
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    //TODO solve injection
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.rates_list_fragment,container,false)
@@ -57,13 +58,13 @@ class RatesListFragment():DaggerFragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //viewModel = ViewModelProviders.of(this,viewModelFactory).get(CurrencyViewModel::class.java)
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(CurrencyViewModel::class.java)
     }
 
 
     private fun getCurrencyList(): Disposable {
 
-        return viewModel.isNetworkAvailable().doOnNext({ networkAvailable ->
+        return viewModel.isNetworkAvailable(context!!).doOnNext({ networkAvailable ->
             if (!networkAvailable) {
                 Log.d("Connection error: ", "No connection!")
                 UiUtils.showSnackbar(context!!, "No connection!", Snackbar.LENGTH_LONG)

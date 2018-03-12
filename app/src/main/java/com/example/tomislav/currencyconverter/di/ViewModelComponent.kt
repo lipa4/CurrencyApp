@@ -1,5 +1,6 @@
 package com.example.tomislav.currencyconverter.di
 
+import com.example.tomislav.currencyconverter.data.repository.CurrenciesRepository
 import com.example.tomislav.currencyconverter.viewmodel.CurrencyViewModel
 import dagger.Component
 
@@ -7,7 +8,6 @@ import dagger.Component
         ViewModelModule::class
 ))
 interface ViewModelComponent {
-
     fun inject( currencyViewModel: CurrencyViewModel)
 
 }
